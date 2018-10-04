@@ -1,0 +1,3 @@
+create table emp(eid int primary key,ename varchar(10),esal int);
+
+insert into emp values(001,'James Bond',null);

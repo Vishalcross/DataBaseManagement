@@ -1,0 +1,36 @@
+Altering the properties of Tables
+create table course(cid int,cname varchar(10));
+//In oracle sql it is not mandatory to create the primary key. However, this varies from vendor to vendor.
+
+alter table course add constraint c_pk primary key (cid);
+//c_pk is the name of the contraint that we have applied. We can drop the constraint by refering to the same variable name.
+
+insert into course values(101,'Physics');
+insert into course values(101,'Chemistry');
+//This leads to the message
+//ORA-00001: unique constraint (TANMAY.C_PK) violated
+
+alter table course add credits int;
+//Adda a new column credits
+
+alter table course drop column credits;
+//Drops the column credits
+
+alter table course drop column cid;
+//Generally this must fail as it is the primary key.
+
+ drop table course;
+ //Drops the table
+
+ create table state(stname varchar(20) primary key,pop int, capital varchar(20),cm varchar(10));
+
+create table cm(name varchar(10) primary key,age int,state varchar(20));
+//Here we wish to create a circular dependency in which both tables have a foreign key pointing at one another.
+//For this reason we first individually define both and then attach the keys separately
+
+alter table state add constraint st_fk foreign key(cm) references cm(name);
+//Thus, the cm acts like a foreign key which referneces to the name of cm
+
+alter table cm add constraint cm_fk foreign key(state) references state(stname);
+//This adds a foreign key referencing to the name of the state in the state table.
+

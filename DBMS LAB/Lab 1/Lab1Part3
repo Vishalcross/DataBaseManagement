@@ -1,0 +1,7 @@
+string should be in single quotes
+varchar adjusts to the required size
+char only always allocates a constant size
+we can have only one primary key,we declare it by either specifying it after the column or after all the columns by enclosing the required column in brackets.
+we can make an attribute say aadhar as unique, by using the unique keyword
+use the not null if we do not wish to have null values
+

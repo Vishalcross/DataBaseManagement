@@ -1,0 +1,27 @@
+Making use of Foreign Keys
+
+create table department(deptno int primary key, deptname varchar(20),deptloc varchar(20));
+
+insert into department values (10, 'Accounting','New York');
+insert into department values (20,'Research','Dallas');
+insert into department values (30,'Sales','Chicago');
+insert into department values (40,'Operations','Boston');
+
+create table emp(eno int primary key,ename varchar(20),job varchar(20),mgr int,hiredate date,sal int,comm int,dno int, foreign key (dno) references department(deptno),foreign key (mgr) references emp(eno));
+
+insert into emp values (7839,'King','President',null,'17-nov-1981',5000,null,10);
+insert into emp values (7566,'Jones','Manager',7839,'2-apr-1981',2975,null,20);
+insert into emp values (7698,'Blake','Manager',7839,'1-may-1981',2850,null,30);
+insert into emp values (7782,'Clark','Manager',7839,'9-jun-1981',2450,null,10);
+insert into emp values (7788,'Scott','Analyst',7566,'19-apr-1987',3000,null,20);
+insert into emp values (7902,'Ford','Analyst',7566,'3-dec-1981',3000,null,20);
+insert into emp values (7499,'Allen','Salesman',7698,'20-feb-1981',1600,300,30);
+insert into emp values (7521,'Ward','Salesman',7698,'22-feb-1981',1250,500,30);
+insert into emp values (7654,'Martin','Salesman',7698,'20-sep-1981',1250,1400,30);
+insert into emp values (7844,'Turner','Salesman',7698,'8-sep-1981',1500,0,30);
+insert into emp values (7900,'James','Clerk',7698,'3-dec-1981',950,null,30);
+insert into emp values (7369,'Smith','Clerk',7902,'17-dec-1980',800,null,20);
+insert into emp values (7876,'Adams','Clerk',7788,'23-may-1987',1100,null,20);
+insert into emp values (7934,'Miller','Clerk',7782,'23-jan-1982',1300,null,10);
+
+//Put them in the order of the referenceing, that is , the one having all dependencies satisfed must be entered first.

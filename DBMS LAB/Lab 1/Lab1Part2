@@ -1,0 +1,30 @@
+101 kiran 10-march-98 male 10 sbtm delhi 67
+103 malini 22-dec-97 female 9 gandhi memorial mumbai 73
+104 ahmed 18-april-1998 male 10 princeton nagole 50
+108 james 30-sept-1996 male 12 sbtm delhi 77
+109 shivani 11-aug-1999 female 11 stanely chennai 46
+
+select * from tab; //tells about all the tables in the database
+
+create table student(rno int, name varchar(20), dob date, class int, gender char(1), college varchar(20), city varchar(20), marks int, primary key(rno)); 
+//gives a table with the particular characteristics
+
+desc student // gives metadata of the table
+
+insert into student values (101, 'kiran', '10-mar-98', 10,'m','SBTM', 'Delhi', 67);
+insert into student values (103, 'malini', '22-dec-97', 9,'f','Gandhi Memorial', 'Mumbai', 73);
+insert into student values (104, 'ahmed', '18-apr-98', 10,'m','Priceton', 'Nagole', 50);
+insert into student values (108, 'james', '30-sep-96', 12,'m','SBTM', 'Delhi', 77);
+insert into student values (109, 'shivani', '11-aug-99', 11,'f','Stanley', 'Chennai', 46);
+//To insert values into the table
+
+select rno,name,city from student;
+//To select the roll number, name and city for all the students in the table
+
+select * from student where name='kiran';
+
+update student set rno=666 where name='kiran';
+//To update the value of the roll number of kiran
+
+delete from student where name='kiran';
+//To delete kiran

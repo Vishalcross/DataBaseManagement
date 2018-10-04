@@ -1,0 +1,7 @@
+Logical Hierarchy of Database Systems
+
+1. Schemas
+ Objects of the same schema can belong to file in different table spaces. 
+2. Table Space
+ Space on disk is divided into table spaces. One file belongs to only one table space.
+ eg. Users: stores the user tables, temp:stores temporary tables used in calculations

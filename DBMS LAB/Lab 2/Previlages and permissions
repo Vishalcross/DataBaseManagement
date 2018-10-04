@@ -1,0 +1,21 @@
+ Previlages and permissions
+
+ Admin Privilages
+ user-name:system
+ password:manager
+
+ create user Tanmay identified by tanmaygk default tablespace users temporary tablespace temp;
+//Create a new user with the name Tanmay and the password tanmaygk
+ grant connect to tanmay identified by tanmaygk;
+ //Grant permission to create a new session
+grant create table to Tanmay;
+//Grant the permission to create tables
+alter user Tanmay quota unlimited on users;
+//It provides the necessary storage within the users tablespace.
+select * from all_users;
+//It shows the data of all the users within the database
+select user from dual;
+//shows the current user
+select sysdate form dual;
+//Shows system date
+//dual is a dummy table with only one row and column
